@@ -5,10 +5,10 @@ import random
 from random import randint
 
 pygame.init()
-display_width = 800
-display_height = 600
+display_width = 900
+display_height = 700
 gameDisplay=pygame.display.set_mode((display_width,display_height))   #horizontal , vertical
-pygame.display.set_caption('Lets Race ')
+pygame.display.set_caption('dOdger')
 
 black = (0,0,0)
 white = (255,255,255)
@@ -44,7 +44,9 @@ def text_objects(text, font,color):
     return textSurface, textSurface.get_rect()
 
 def quitgame():
-    cvv
+    pygame.quit()
+    quit()
+    
     
 def button(msg,x,y,w,h,ic,ac,action=None):
     mouse = pygame.mouse.get_pos()
@@ -153,10 +155,10 @@ def game_loop():
             color=getRandomColor()
 
          if y_cor> display_height:
-            y_cor = 0 - 200
+            y_cor = 0 - 300
             x_cor = random.randint(0,display_width)
             count+=1 
-            if count%3 ==0 :
+            if count%3 ==0:
              thing_speed += 1
             col=getRandomColor()
 		
@@ -173,6 +175,6 @@ def game_loop():
              
          pygame.display.update()
          clock.tick(100)   #frames per second.. for smooth display more no of frames
-#game_intro()
-game_loop()
+game_intro()
+##game_loop()
 
